@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c15c0245-bab6-4686-97b8-dc93a37cc223">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tblPartyAccount.PartyAccount as namefamilyparty,tblCheckIssued.DescCheck, tblCheckIssued.NameBank,tblCheckIssued.NumberCheck, tblCheckIssued.AmountCheck, tblCheckIssued.DateIssuance, tblCheckIssued.DateUsance,tblCheckIssued.pass,tblCheckIssued.id FROM tblPartyAccount INNER JOIN tblCheckIssued ON tblPartyAccount.[code] = tblCheckIssued.[PartyAccount];]]>
+	</queryString>
+	<field name="namefamilyparty" class="java.lang.Object"/>
+	<field name="DescCheck" class="java.lang.Object"/>
+	<field name="NameBank" class="java.lang.Object"/>
+	<field name="NumberCheck" class="java.lang.Object"/>
+	<field name="AmountCheck" class="java.lang.Object"/>
+	<field name="DateIssuance" class="java.lang.Object"/>
+	<field name="DateUsance" class="java.lang.Object"/>
+	<field name="pass" class="java.lang.Object"/>
+	<field name="id" class="java.lang.Object"/>
+	<group name="namefamilyparty">
+		<groupExpression><![CDATA[$F{namefamilyparty}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#333333" uuid="5ba36dbb-e679-4694-aa8d-b554ca3e58b8"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""+$F{namefamilyparty}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="728e37a2-60d0-4425-846c-f4f156906f82"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="0" width="595" height="64" uuid="b252e506-6d8f-42cd-a8b1-9af9797e8df6"/>
+				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="5" width="263" height="33" uuid="a9563fa8-e390-4c70-af37-9bb1936c6d32"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Wood Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="39" width="200" height="22" forecolor="#FFFFFF" uuid="30b78b98-0693-4c24-ad28-3ff94604c489"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Wood SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="41fa5d10-de5b-4a5f-b01a-c76f616713ce"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="69" height="15" uuid="76a4ecd6-103f-448d-9f65-19073eb9bc3b"/>
+				<text><![CDATA[شرح چک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="69" y="19" width="69" height="15" uuid="033f221c-26ec-4e5c-963e-52ad622c836d"/>
+				<text><![CDATA[نام بانک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="69" height="15" uuid="7f8388dc-ff98-4783-8a12-866ffe458e2e"/>
+				<text><![CDATA[شماره چک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="207" y="19" width="69" height="15" uuid="a055eb5d-950a-432c-9c99-fd5ecceebba7"/>
+				<text><![CDATA[مقدار چک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="69" height="15" uuid="d280b158-dc72-4a5a-9e43-bd088e6bb5bc"/>
+				<text><![CDATA[تاریخ صدور]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="345" y="19" width="69" height="15" uuid="48529621-76b3-4a64-ba8c-29a9a3a5b342"/>
+				<text><![CDATA[تاریخ سررسید]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="69" height="15" uuid="4160198e-c313-47b2-a1ed-4633f03dd90c"/>
+				<text><![CDATA[پاس]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="483" y="19" width="69" height="15" uuid="5116895f-e185-4448-9c24-c2336b03303e"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="c7312eaf-3d1c-4cc9-af46-bb3098ee1799"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="69" height="15" uuid="ec7ed7ed-f7f5-47ea-bd10-ad91c8a9fc6e"/>
+				<textFieldExpression><![CDATA[""+$F{DescCheck}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="69" y="0" width="69" height="15" uuid="f95eb918-3373-4797-b7b5-bce55d589b3e"/>
+				<textFieldExpression><![CDATA[""+$F{NameBank}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="69" height="15" uuid="418a2d13-63b9-41b4-9dba-6aa33c0470f5"/>
+				<textFieldExpression><![CDATA[""+$F{NumberCheck}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="207" y="0" width="69" height="15" uuid="5ed402d5-7269-4e59-b5ff-5761d868b96b"/>
+				<textFieldExpression><![CDATA[""+$F{AmountCheck}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="69" height="15" uuid="712c6886-3c6b-4cf9-9e10-7f85611236f5"/>
+				<textFieldExpression><![CDATA[""+$F{DateIssuance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="345" y="0" width="69" height="15" uuid="cfbfa1a4-bac6-4182-ab53-cd4482107d50"/>
+				<textFieldExpression><![CDATA[""+$F{DateUsance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="69" height="15" uuid="2ac07581-4ed6-49ab-b144-e8eb0f31c087"/>
+				<textFieldExpression><![CDATA[""+$F{pass}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="483" y="0" width="69" height="15" uuid="b69fea85-3fad-4f81-bb7c-c5167f692e12"/>
+				<textFieldExpression><![CDATA[""+$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="0ab9e5f7-d647-4d1d-85cf-9401df4c7e1d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="a43739e1-6de9-4dfe-b3d5-fb2e8a1b85b9"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="e24ba6fb-9d03-4dda-9203-64fecc042990"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="d2359336-6c1d-4fee-86da-b9f1f518e1fa"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
